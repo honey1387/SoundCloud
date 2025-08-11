@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Violet</title>
+    <link rel="stylesheet" href="index.style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header class="header">
+        <div class="top-banner">
+            <p>ارسال رایگان برای سفارشات بالای ۱ میلیون تومان</p>
+        </div>
+        
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="pictures/logo.png" alt="لوگوی ویولت" class="logo-image">
+                    <h1>ویولت</h1>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#home">خانه</a>
+                    <a href="#body">مراقبت بدن</a>
+                    <a href="#face">مراقبت صورت</a>
+                    <a href="#all">همه محصولات</a>
+                </div>
+                
+                <div class="nav-icons">
+                    <a href="#search"><i class="fas fa-search"></i></a>
+                    <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#" id="signup-icon"><i class="fas fa-user-plus"></i></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="signup-form-container" id="signup-form-container">
+            <div class="signup-login-tabs">
+                <button type="button" class="tab-btn active" id="signup-tab" aria-label="نمایش فرم ثبت‌نام">ثبت‌نام</button>
+                <button type="button" class="tab-btn" id="login-tab" aria-label="نمایش فرم ورود">ورود</button>
+            </div>
+            <form class="signup-form" id="signup-form" autocomplete="off" aria-label="فرم ثبت‌نام">
+                <h3 class="form-title">ایجاد حساب کاربری</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="نام کاربری" required aria-label="نام کاربری">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="ایمیل" required aria-label="ایمیل">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="رمز عبور" required aria-label="رمز عبور">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="تکرار رمز عبور" required aria-label="تکرار رمز عبور">
+                </div>
+                <div class="form-error" id="signup-error" aria-live="polite"></div>
+                <button type="submit">ثبت‌نام</button>
+            </form>
+            <form class="login-form" id="login-form" autocomplete="off" aria-label="فرم ورود">
+                <h3 class="form-title">ورود به حساب کاربری</h3>
+                <div class="form-group">
+                    <input type="email" placeholder="ایمیل" required aria-label="ایمیل">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="رمز عبور" required aria-label="رمز عبور">
+                </div>
+                <div class="form-error" id="login-error" aria-live="polite"></div>
+                <button type="submit">ورود</button>
+                <div class="forgot-password">
+                    <a href="#" tabindex="0">فراموشی رمز عبور؟</a>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <section class="hero-slider" id="home">
+        <div class="slider-container">
+            <div class="slide slide-1 active">
+                <div class="slide-content">
+                    <h2>زیبایی طبیعی خود را کشف کنید</h2>
+                    <p>لوازم آرایشی با کیفیت برای هر نوع پوست</p>
+                    <button class="cta-button">همین حالا خرید کنید</button>
+                </div>
+            </div>
+            
+            <div class="slide slide-2">
+                <div class="slide-content">
+                    <h2>درخشش بی‌نظیر</h2>
+                    <p>محصولات مراقبت پوست انقلابی</p>
+                    <button class="cta-button">مشاهده مجموعه</button>
+                </div>
+            </div>
+            
+            <div class="slide slide-3">
+                <div class="slide-content">
+                    <h2>لوکس و کیفیت</h2>
+                    <p>لوازم آرایشی حرفه‌ای</p>
+                    <button class="cta-button">مشاهده محصولات</button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+        
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">خرید بر اساس دسته‌بندی</h2>
+            <div class="categories-grid">
+                <div class="category-card category-body" data-category="body">
+                    <h3>مراقبت بدن</h3>
+                    <p>با محصولات مراقبت بدن ما، بدن خود را تغذیه و آرام کنید</p>
+                    <button class="category-btn">مشاهده مراقبت بدن</button>
+                </div>
+                
+                <div class="category-card category-face" data-category="face">
+                    <h3>مراقبت صورت</h3>
+                    <p>با راه‌حل‌های پیشرفته مراقبت صورت، پوست خود را احیا کنید</p>
+                    <button class="category-btn">مشاهده مراقبت صورت</button>
+                </div>
+                
+                <div class="category-card category-all" data-category="all">
+                    <h3>همه محصولات</h3>
+                    <p>مجموعه کامل لوازم آرایشی و مراقبت پوست را کشف کنید</p>
+                    <button class="category-btn">مشاهده همه</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">محصولات ویژه</h2>
+            <div class="products-container">
+                <button class="products-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="محصول ۱">
+                        </div>
+                        <div class="product-info">
+                            <h3>سرم درخشش طبیعی</h3>
+                            <p class="price">۱۹۸,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="محصول ۲">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم مرطوب‌کننده صورت</h3>
+                            <p class="price">۲۴۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="محصول ۳">
+                        </div>
+                        <div class="product-info">
+                            <h3>روغن لوکس بدن</h3>
+                            <p class="price">۳۴۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="محصول ۴">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم ضد پیری</h3>
+                            <p class="price">۳۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="محصول ۵">
+                        </div>
+                        <div class="product-info">
+                            <h3>سرم ویتامین سی</h3>
+                            <p class="price">۲۷۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="محصول ۶">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم ترمیم شبانه</h3>
+                            <p class="price">۴۴۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="محصول ۷">
+                        </div>
+                        <div class="product-info">
+                            <h3>ژل دور چشم</h3>
+                            <p class="price">۱۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="محصول ۸">
+                        </div>
+                        <div class="product-info">
+                            <h3>لوسیون مرطوب‌کننده</h3>
+                            <p class="price">۲۲۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="محصول ۹">
+                        </div>
+                        <div class="product-info">
+                            <h3>پاک‌کننده صورت</h3>
+                            <p class="price">۱۸۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="محصول ۱۰">
+                        </div>
+                        <div class="product-info">
+                            <h3>اسکراب بدن</h3>
+                            <p class="price">۲۵۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="محصول ۱۱">
+                        </div>
+                        <div class="product-info">
+                            <h3>ماسک مو</h3>
+                            <p class="price">۳۱۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="محصول ۱۲">
+                        </div>
+                        <div class="product-info">
+                            <h3>رژ لب</h3>
+                            <p class="price">۱۲۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="محصول ۱۳">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم دست</h3>
+                            <p class="price">۱۵۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="محصول ۱۴">
+                        </div>
+                        <div class="product-info">
+                            <h3>ماسک صورت</h3>
+                            <p class="price">۸۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="محصول ۱۵">
+                        </div>
+                        <div class="product-info">
+                            <h3>عطر</h3>
+                            <p class="price">۸۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="products-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Selling Products -->
+    <section class="best-selling">
+        <div class="container">
+            <h2 class="section-title">پرفروش‌ترین محصولات</h2>
+            <div class="products-container">
+                <button class="products-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="پرفروش ۱">
+                        </div>
+                        <div class="product-info">
+                            <h3>سرم حرفه‌ای صورت</h3>
+                            <p class="price">۴۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="پرفروش ۲">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم لوکس بدن</h3>
+                            <p class="price">۳۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="پرفروش ۳">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم ضد پیری شبانه</h3>
+                            <p class="price">۵۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="پرفروش ۴">
+                        </div>
+                        <div class="product-info">
+                            <h3>روشن‌کننده ویتامین سی</h3>
+                            <p class="price">۳۴۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="پرفروش ۵">
+                        </div>
+                        <div class="product-info">
+                            <h3>ماسک مرطوب‌کننده</h3>
+                            <p class="price">۲۴۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="پرفروش ۶">
+                        </div>
+                        <div class="product-info">
+                            <h3>ژل دور چشم</h3>
+                            <p class="price">۲۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="پرفروش ۷">
+                        </div>
+                        <div class="product-info">
+                            <h3>اسکراب بدن</h3>
+                            <p class="price">۲۷۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="پرفروش ۸">
+                        </div>
+                        <div class="product-info">
+                            <h3>پاک‌کننده صورت</h3>
+                            <p class="price">۱۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="پرفروش ۹">
+                        </div>
+                        <div class="product-info">
+                            <h3>لوسیون مرطوب‌کننده</h3>
+                            <p class="price">۲۲۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="پرفروش ۱۰">
+                        </div>
+                        <div class="product-info">
+                            <h3>درمان مو</h3>
+                            <p class="price">۳۱۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="پرفروش ۱۱">
+                        </div>
+                        <div class="product-info">
+                            <h3>رژ لب</h3>
+                            <p class="price">۱۲۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="پرفروش ۱۲">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم دست</h3>
+                            <p class="price">۱۵۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="پرفروش ۱۳">
+                        </div>
+                        <div class="product-info">
+                            <h3>ماسک صورت</h3>
+                            <p class="price">۸۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="پرفروش ۱۴">
+                        </div>
+                        <div class="product-info">
+                            <h3>عطر</h3>
+                            <p class="price">۸۹۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="پرفروش ۱۵">
+                        </div>
+                        <div class="product-info">
+                            <h3>روغن بدن</h3>
+                            <p class="price">۴۴۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="products-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discount Products -->
+    <section class="discount-products">
+        <div class="container">
+            <h2 class="section-title">تخفیف‌های ویژه</h2>
+            <div class="products-container">
+                <button class="products-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="products-grid">
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۳۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="تخفیف ۱">
+                        </div>
+                        <div class="product-info">
+                            <h3>سرم درخشش طبیعی</h3>
+                            <p class="price"><span class="original-price">۲۹۹,۰۰۰ تومان</span> ۲۰۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۲۵٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="تخفیف ۲">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم مرطوب‌کننده صورت</h3>
+                            <p class="price"><span class="original-price">۲۴۹,۰۰۰ تومان</span> ۱۸۷,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۴۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="تخفیف ۳">
+                        </div>
+                        <div class="product-info">
+                            <h3>روغن لوکس بدن</h3>
+                            <p class="price"><span class="original-price">۳۴۹,۰۰۰ تومان</span> ۲۰۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۲۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="تخفیف ۴">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم ضد پیری</h3>
+                            <p class="price"><span class="original-price">۳۹۹,۰۰۰ تومان</span> ۳۱۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۳۵٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="تخفیف ۵">
+                        </div>
+                        <div class="product-info">
+                            <h3>سرم ویتامین سی</h3>
+                            <p class="price"><span class="original-price">۲۷۹,۰۰۰ تومان</span> ۱۸۱,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۵۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="تخفیف ۶">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم ترمیم شبانه</h3>
+                            <p class="price"><span class="original-price">۴۴۹,۰۰۰ تومان</span> ۲۲۴,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۱۵٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="تخفیف ۷">
+                        </div>
+                        <div class="product-info">
+                            <h3>ژل دور چشم</h3>
+                            <p class="price"><span class="original-price">۱۹۹,۰۰۰ تومان</span> ۱۶۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۳۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="تخفیف ۸">
+                        </div>
+                        <div class="product-info">
+                            <h3>لوسیون مرطوب‌کننده</h3>
+                            <p class="price"><span class="original-price">۲۲۹,۰۰۰ تومان</span> ۱۶۰,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۲۵٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="تخفیف ۹">
+                        </div>
+                        <div class="product-info">
+                            <h3>پاک‌کننده صورت</h3>
+                            <p class="price"><span class="original-price">۱۸۹,۰۰۰ تومان</span> ۱۴۲,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۴۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="تخفیف ۱۰">
+                        </div>
+                        <div class="product-info">
+                            <h3>اسکراب بدن</h3>
+                            <p class="price"><span class="original-price">۲۵۹,۰۰۰ تومان</span> ۱۵۵,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۲۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="تخفیف ۱۱">
+                        </div>
+                        <div class="product-info">
+                            <h3>ماسک مو</h3>
+                            <p class="price"><span class="original-price">۳۱۹,۰۰۰ تومان</span> ۲۵۵,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۶۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="تخفیف ۱۲">
+                        </div>
+                        <div class="product-info">
+                            <h3>رژ لب</h3>
+                            <p class="price"><span class="original-price">۱۲۹,۰۰۰ تومان</span> ۵۱,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۳۵٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (10).jpg" alt="تخفیف ۱۳">
+                        </div>
+                        <div class="product-info">
+                            <h3>کرم دست</h3>
+                            <p class="price"><span class="original-price">۱۵۹,۰۰۰ تومان</span> ۱۰۳,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۵۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (19).jpg" alt="تخفیف ۱۴">
+                        </div>
+                        <div class="product-info">
+                            <h3>ماسک صورت</h3>
+                            <p class="price"><span class="original-price">۸۹,۰۰۰ تومان</span> ۴۴,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card discount-card">
+                        <div class="discount-badge">۳۰٪-</div>
+                        <div class="product-image">
+                            <img src="index-pictures/picture-index (21).jpg" alt="تخفیف ۱۵">
+                        </div>
+                        <div class="product-info">
+                            <h3>عطر</h3>
+                            <p class="price"><span class="original-price">۸۹۹,۰۰۰ تومان</span> ۶۲۹,۰۰۰ تومان</p>
+                            <button class="add-to-cart">افزودن به سبد</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="products-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Violet</h3>
+                    <p>سفر شما به زیبایی طبیعی از اینجا شروع می‌شود.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>لینک‌های سریع</h4>
+                    <ul>
+                        <li><a href="#home">خانه</a></li>
+                        <li><a href="#body">مراقبت بدن</a></li>
+                        <li><a href="#face">مراقبت صورت</a></li>
+                        <li><a href="#all">همه محصولات</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>خدمات مشتری</h4>
+                    <ul>
+                        <li><a href="#contact">تماس با ما</a></li>
+                        <li><a href="#shipping">اطلاعات ارسال</a></li>
+                        <li><a href="#returns">بازگشت کالا</a></li>
+                        <li><a href="#faq">سوالات متداول</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>خبرنامه</h4>
+                    <p>برای دریافت نکات زیبایی و پیشنهادات ویژه مشترک شوید</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="ایمیل خود را وارد کنید">
+                        <button type="submit">مشترک شدن</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
